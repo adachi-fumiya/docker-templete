@@ -2,30 +2,30 @@ version: '3'
 
 services:
   php:
-    container_name: sample_app_php # ここを変更する
+    container_name: docker_test_php
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
     volumes:
-    - ./src:/var/www
+    - ./server:/var/www
 
   nginx:
     image: nginx
-    container_name: sample_app_nginx # ここを変更する
+    container_name: docker_test_nginx
     ports:
     - 80:80
     volumes:
-    - ./src:/var/www
+    - ./server:/var/www
     - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
     - php
 
   db:
     image: mysql:5.7.26
-    container_name: sample_app_db # ここを変更する
+    container_name: docker_test_db
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: sample_db # ここを変更する
+      MYSQL_DATABASE: docker_test
       MYSQL_USER: docker
       MYSQL_PASSWORD: docker
       TZ: 'Asia/Tokyo'
