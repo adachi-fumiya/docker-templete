@@ -15,14 +15,12 @@ composer global require laravel/installer
 composer create-project --prefer-dist laravel/laravel test_docker
 ```
 
-.envを書き換える
+.envを書き換える docker-compose.ymlを参照する
 ```
 DB_CONNECTION=mysql
 DB_HOST=db
 DB_PORT=3306
-DB_DATABASE=docker_test
+DB_DATABASE= sample_db
 DB_USERNAME=docker
 DB_PASSWORD=docker
 ```
-
-sequelproのurl http://sequelpro.com/
