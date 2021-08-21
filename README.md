@@ -30,7 +30,7 @@ DB_PASSWORD=docker
 php artisan config:cache
 ```
 
-5. migrationを走らせる
+6. migrationを走らせる
 ```
 php artisan migarate
 ```
