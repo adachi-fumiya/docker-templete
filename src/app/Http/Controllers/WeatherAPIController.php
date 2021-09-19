@@ -10,9 +10,9 @@ class WeatherAPIController extends Controller
     public function weatherData() {
         $API_KEY = config('services.openweathermap.key');
         $base_url = config('services.openweathermap.url');
-        $param = 'zip=870-0142,JP';
+        $city = 'Tokyo';
 
-        $url = "$base_url?$param&APPID=$API_KEY";
+        $url = "$base_url?units=metric&q=$city&APPID=$API_KEY";
         
         // 接続
         $client = new Client();
