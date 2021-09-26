@@ -20,9 +20,9 @@ class WeatherAPIController extends Controller
         $method = "GET";
         $response = $client->request($method, $url);
 
-        $posts = $response->getBody();
-        $posts = json_decode($posts, true);
+        $weather_data = $response->getBody();
+        $weather_data = json_decode($weather_data, true);
 
-        return response()->json($posts);
+        return response()->json($weather_data);
     }
 }
