@@ -2,7 +2,7 @@ version: '3'
 
 services:
   php:
-    container_name: sample_app_php
+    container_name: sample_php
     build:
       context: .
       dockerfile: ./docker/php/Dockerfile
@@ -11,7 +11,7 @@ services:
 
   nginx:
     image: nginx
-    container_name: sample_app_nginx
+    container_name: sample_nginx
     ports:
     - 80:80
     volumes:
@@ -23,7 +23,7 @@ services:
   db:
     image: mysql:8.0
     # platform: linux/x86_64 # M1の場合はコメントアウトをはずす
-    container_name: sample_app_db
+    container_name: sample_db
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: sample_db
