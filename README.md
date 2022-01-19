@@ -17,5 +17,5 @@ docker exec -it sample_php bash
 
 4. migrationを走らせる
 ```
-php artisan migarate
+php artisan migrate
 ```
